@@ -12,7 +12,7 @@
       "status": "Working manuscript",
       "topics": ["Causal identification", "Representation learning", "Transfer learning"],
       "landing": "papers/bsg/README.md",
-      "provenance": "docs/bsg/PROVENANCE.md",
+      "provenance": "papers/bsg/PROVENANCE.md",
       "artifacts": [
         {
           "label": "Manuscript PDF",

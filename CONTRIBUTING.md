@@ -1,41 +1,25 @@
 # Contributing
 
-This archive accepts material from different projects and papers. For a new collection, follow [Adding files](docs/ADDING_FILES.md) and update `catalog.json` and regenerate [the catalog](CATALOG.md) with `python scripts/catalog.py --write`. Name the relevant project; BSG is not the default scope of every submission.
+This is where I share my own papers and project files. Corrections, useful connections, and reproducible experiments are welcome.
 
-Contributions should make a claim easier to understand, test, or falsify. Corrections and counterexamples are as useful as positive constructions.
+## Give me something I can check
 
-## Choose a contribution
+For a correction, name the project and version, point to the section or file, and explain the issue. Include a derivation, counterexample, or small reproduction when you can. You can [open an issue](https://github.com/DeSa33/knowledge/issues/new/choose) before writing a pull request.
 
-Use a **new collection or file update** issue to add material from any project. Follow [the intake guide](docs/ADDING_FILES.md) for naming, metadata, and versioning.
+For an experiment, include the code revision, commands, inputs, environment, and results. State the assumptions and limitations. BSG-specific comparisons should follow [its evaluation guide](papers/bsg/EVALUATION.md).
 
-Use a **research review** issue for a theorem, definition, proof gap, counterexample, or clarification. Use an **experiment proposal or result** issue for a reproducible empirical investigation. For a documentation typo, a focused pull request is enough.
+## Adding or updating material
 
-## Required context
+Follow the [repository guide](docs/README.md#add-a-paper-or-project). Keep an original artifact unchanged unless the change is intentional. Give new editions distinct paths so readers can still find the version they used.
 
-State the project or paper, version, and section/equation/page or other precise location, exact assumptions, and the smallest reproducible example or derivation. Distinguish a proposed change from an established result. If an argument depends on an oracle, resets, intervention access, independence, a finite state bound, or numeric precision, say so explicitly.
+Submit only files you have permission to publish. Attribute external work and disclose material AI assistance. For this repo, publication and reuse permissions are separate; see [RIGHTS.md](RIGHTS.md).
 
-For experiments, include code revision, environment, commands, seeds, budgets, baselines, source-null/expanded controls where relevant, raw outputs, uncertainty, and all failure cases. Apply evaluation requirements appropriate to the project. For BSG work specifically, follow [its evaluation guide](docs/bsg/EVALUATION.md).
+## Before a pull request
 
-## Pull-request workflow
+1. Keep the change focused and explain what it fixes or adds.
+2. Update affected links and catalog metadata.
+3. Regenerate the indexes with `python scripts/catalog.py --write` if metadata changed.
+4. Run `python scripts/verify_repository.py` and `python -m unittest discover -s scripts`.
+5. State what you checked and what remains uncertain.
 
-1. Open an issue for substantial mathematical or structural changes.
-2. Work on a descriptive branch and keep the change focused.
-3. Update the nearest guide and map when paths or responsibilities change.
-4. Run `python scripts/verify_repository.py`.
-5. Explain what changed, why, how it was checked, and what remains uncertain.
-
-Do not silently replace an original published artifact. Proposed paper corrections should first identify the exact current text and the proposed replacement. Accepted new editions must update the collection provenance, `SHA256SUMS`, citation information, and the changelog together.
-
-## Attribution and permissions
-
-Attribute external ideas and sources precisely. Disclose material AI assistance and what was checked by a person or executable test. Submit only material you have authority to contribute. No repository-wide open license has been selected; contributing does not imply a broad license change.
-
-## Review criteria
-
-- Assumptions and quantifiers are explicit and consistent.
-- Information and computation available to the solver match the claim.
-- Evidence supports the stated scope.
-- Existing original artifacts and unrelated content are preserved.
-- Documentation links and packaging checks pass.
-
-Maintainer review is required for acceptance. Passing CI alone is not mathematical review.
+I review changes before accepting them. Passing the repository checks establishes file and catalog consistency; scientific claims need their own evidence.

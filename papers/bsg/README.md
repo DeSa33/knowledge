@@ -1,54 +1,62 @@
 # Broad Semantic Generalization
 
-### Problems in Representation and Transfer
+## Problems in Representation and Transfer
 
-**Research paper · v4.0 · 22 October 2026 · Working manuscript**
+**v4.0 · 22 October 2026 · 17 pages · Working manuscript**
 
-[**Read the PDF**](../../BroadSematnicGenralzation%28BSG%29.pdf) · [Download PDF](../../BroadSematnicGenralzation%28BSG%29.pdf?raw=true) · [Reading guide](../../docs/bsg/README.md) · [Problem index](../../docs/bsg/PROBLEM_INDEX.md)
+[**Read the paper**](../../BroadSematnicGenralzation%28BSG%29.pdf) · [Download PDF](../../BroadSematnicGenralzation%28BSG%29.pdf?raw=true) · [Problem index](PROBLEM_INDEX.md) · [Evaluation guide](EVALUATION.md)
 
-## Overview
+I'm exploring how a system can use what it learned in one environment to make better decisions in another, even when they represent observations, actions, and internal states differently.
 
-Two environments can share a useful mechanism while expressing their observations, actions, and internal states differently. BSG asks how a learner can discover that correspondence, preserve decision-relevant distinctions, and demonstrate that reuse improves target decisions within a stated resource budget.
+The difficulty is more than finding a correspondence. It needs to preserve distinctions that matter, reject misleading relationships, and show that source information improves decisions within the allowed resources. The full joint problem remains open.
 
-The manuscript separates state identification, domain alignment, reusable libraries, experiment design, transfer admission, composition, adaptation, and hidden memory. Its integrated challenge requires one procedure to meet the joint contract rather than solving isolated components.
+## What's here
 
-## Artifact record
+The paper lays out eight component problems and an integrated challenge. Its fixed reference family uses composed binary transducers so the generator, comparison method, and abstraction test can be stated precisely.
 
-| Field | Value |
+The PDF is the original v4 manuscript. The files alongside this page help readers navigate it:
+
+| Guide | Purpose |
 | --- | --- |
-| Edition | 4.0 |
-| Document date | 22 October 2026 |
-| Format | PDF · 17 pages · 395,699 bytes |
-| File | `BroadSematnicGenralzation(BSG).pdf` |
-| Status | Independent working manuscript |
-| Peer review | No independent peer review stated |
-| Preparation | AI assistance disclosed in the manuscript |
-| Source identity | [Provenance and SHA-256](../../docs/bsg/PROVENANCE.md) |
-| Permissions | [Current rights status](../../RIGHTS.md) |
+| [Problem index](PROBLEM_INDEX.md) | Find P1–P8, the joint challenge, and the relevant sections |
+| [Evaluation](EVALUATION.md) | Understand the required controls, budgets, and limits of a result |
+| [Provenance](PROVENANCE.md) | Identify the original document and exact file hash |
+| [Roadmap](ROADMAP.md) | See proposed next steps and what evidence they would need |
 
-## What is included
+No solver, benchmark source, LaTeX source, or experimental dataset is included in this collection.
 
-- The original v4 PDF, unchanged apart from its filename.
-- A [reading guide](../../docs/bsg/README.md) and [P1–P8 problem index](../../docs/bsg/PROBLEM_INDEX.md).
-- An [evaluation guide](../../docs/bsg/EVALUATION.md) describing evidence boundaries and controls.
-- A [research roadmap](../../docs/bsg/ROADMAP.md) distinguishing current content from proposed work.
+## Reading the paper
 
-This collection contains no solver, benchmark source, LaTeX source, or experimental dataset. The manuscript is a problem collection; publication here does not establish that its integrated challenge has been solved.
+1. **Sections I–III:** the question, common setting, prediction constraints, and resource accounting.
+2. **Sections IV–XI:** the individual problems P1–P8. Each has its own assumptions and information access.
+3. **Section XII:** the joint contract, finite feasibility, and uniform quantifiers.
+4. **Section XIII:** the fixed composed-transducer reference family.
+5. **Appendices:** proof details, calibration, composition certificates, and notation.
 
-## Review and discussion
+“Semantic” here means intervention responses and consequences relevant to a stated decision problem. A successful example under one contract doesn't establish a result for every environment. The [evaluation guide](EVALUATION.md) explains the distinctions to keep when reviewing or extending the work.
 
-Use the [contribution guide](../../CONTRIBUTING.md) and identify the exact problem, assumptions, section, and equation. Proof gaps, counterexamples, constructions, and reproducible experiments are welcome. Include scope and limitations with every result.
+## Status and provenance
 
-## Cite this edition
+This is an independent working manuscript. It has not undergone independent peer review, and its preparation note discloses AI assistance. The manuscript contains elementary proofs and a solved relay example, but does not claim that the joint challenge has been achieved.
 
-> *Broad Semantic Generalization: Problems in Representation and Transfer.* Independent working manuscript, version 4.0, 22 October 2026. Available in the DeSa33/knowledge repository.
+The imported PDF has **395,699 bytes** and **17 pages**. Only its filename changed to `BroadSematnicGenralzation(BSG).pdf`; its original bytes are preserved. Full details and the SHA-256 record are in [PROVENANCE.md](PROVENANCE.md).
 
-The PDF does not name an author in its embedded author metadata. This suggested reference identifies the work and edition without inventing authorship, a DOI, or a journal publication. Add a commit permalink when citing an immutable repository snapshot.
+## Cite this version
+
+> *Broad Semantic Generalization: Problems in Representation and Transfer.* Independent working manuscript, version 4.0, 22 October 2026. DeSa33/knowledge.
+
+[Stable link to this edition](https://github.com/DeSa33/knowledge/blob/c67e3c89b518fbd0a603680a38777753fdb736cb/BroadSematnicGenralzation%28BSG%29.pdf)
+
+The source does not supply a named author in its embedded metadata. This reference identifies the document and edition without assigning authorship or a publication venue. See [rights and permissions](../../RIGHTS.md) before reusing material.
+
+## Feedback and next work
+
+If you're reviewing a statement, include the exact problem, assumptions, section, and equation. A derivation, counterexample, or runnable experiment makes the feedback easier to assess. See [Contributing](../../CONTRIBUTING.md).
 
 ## Version history
 
-| Edition | Date | Archive action |
+| Edition | Document date | Import |
 | --- | --- | --- |
-| v4.0 | 22 October 2026 | Imported on 24 October 2026; filename changed, original bytes preserved |
+| v4.0 | 22 October 2026 | Imported 24 October 2026; original bytes preserved |
 
-[← All collections](../../CATALOG.md) · [Archive home](../../README.md)
+[← All my work](../../CATALOG.md) · [Repo home](../../README.md)

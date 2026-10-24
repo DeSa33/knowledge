@@ -1,19 +1,14 @@
-## Problem and change
+## Change
 
-Describe the concrete correction or addition. Name the project or paper, version, and exact section/equation when relevant.
+What does this fix or add? Name the project or paper and relevant version.
 
 ## Evidence
 
-Provide derivation, counterexample, reproduction commands, or review evidence. Distinguish proposed work from executed results.
+Explain your reasoning or give the commands and results needed to check it. State limitations or untested cases.
 
-## Scope and limitations
+## Verification
 
-State assumptions, information access, budgets, controls, and untested cases relevant to the claim.
-
-## Checks
-
-- [ ] Ran `python scripts/verify_repository.py`.
-- [ ] Updated affected links and maps.
-- [ ] Preserved original artifact bytes, or explicitly documented an authorized new edition.
-- [ ] Included provenance and attribution for new material.
-- [ ] Did not equate packaging CI with mathematical validation.
+- [ ] Original artifacts are preserved, or an intentional new edition is identified.
+- [ ] Metadata and generated indexes are up to date.
+- [ ] `python scripts/verify_repository.py` passes.
+- [ ] `python -m unittest discover -s scripts` passes.

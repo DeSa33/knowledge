@@ -1,16 +1,12 @@
-# Agent instructions
+# Repository instructions
 
-Start with `README.md`, `PROJECT_MAP.md`, then the relevant local map and exact source.
+This is DeSa33's multi-project archive. Keep the README in a direct first-person voice. Read `docs/MAP.md`, then the exact collection files involved in the task.
 
-- This is a multi-project archive, not a BSG-only repository. Start with CATALOG.md for collection identity.
-- The BSG PDF is authoritative for its v4 statements. Read the relevant section before changing a summary.
-- Preserve the exact requested PDF filename and original bytes unless a manuscript revision is explicitly requested.
-- Do not fabricate benchmarks, peer review, novelty, affiliations, solver implementations, or solved status.
-- Distinguish a documented proposition, a reviewed proof, an executed experiment, and a proposed result.
-- Record scope: problem ID, version, environment family, information access, resource budget, and validation method.
-- Do not add an open license, claim manuscript authorship, or replace citation identity without maintainer instruction.
-- Keep secrets, private conversations, user profiles, and unrelated research out of the repository.
-- Edit `catalog.json` for catalog changes; run `python scripts/catalog.py --write` and `--check`. Run catalog contract tests with `python -m unittest discover -s scripts -p "test_*.py"`.
-- Run `python scripts/verify_repository.py` after relevant edits. This checks packaging, not mathematics.
-- A changed registered artifact requires a new SHA-256 digest and a provenance/changelog entry. Never update the checksum to conceal an accidental mismatch.
-- Use relative local links and update maps when adding or moving files.
+- Preserve `BroadSematnicGenralzation(BSG).pdf` and its bytes unless an edit to the manuscript is explicitly requested. The PDF is authoritative for v4 statements.
+- Keep a collection's overview, provenance, and guides together. Avoid duplicate READMEs and maps that repeat the same instructions.
+- `catalog.json` owns collection metadata and artifact hashes. `scripts/catalog.py --write` generates `CATALOG.md`, `SHA256SUMS`, and the marked collection block in `README.md`. Do not edit those outputs by hand.
+- Treat unknown authorship, dates, and versions as unknown; never fabricate peer review, affiliation, novelty, experimental results, or solved status.
+- Keep repository checks separate from mathematical verification. Report the actual scope of any result.
+- Run `python scripts/verify_repository.py` and `python -m unittest discover -s scripts` after changes. Use `python scripts/catalog.py --check` for a focused catalog check.
+- Do not add an open-content license, third-party files, private data, or secrets without authorization.
+- Update links and `docs/MAP.md` when paths change. Git history preserves previous layouts; do not rewrite it.

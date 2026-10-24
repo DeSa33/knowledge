@@ -8,16 +8,33 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   verify:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: '3.10'
+          - os: windows-latest
+            python: '3.13'
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
-      - name: Verify documents, links, and PDF integrity
-        run: python3 scripts/verify_repository.py
-      - name: Verify catalog metadata and generated index
-        run: python3 scripts/catalog.py --check
-      - name: Test multi-collection metadata contracts
-        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check repository and generated indexes
+        run: python scripts/verify_repository.py
+      - name: Run regression tests
+        run: python -m unittest discover -s scripts -v

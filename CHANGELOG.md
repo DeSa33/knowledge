@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-24 — Presentation refinement
+
+- Added a local vector masthead, live CI status badge, and concise landing-page navigation.
+- Kept collection details separate from archive-level guidance.
+- Added a new collection/file update issue form for any project.
+- Generalized contribution and citation metadata across collections.
+
 ## 2026-10-24 — Multi-project archive organization
 
 - Clarified that knowledge hosts files from different projects and papers.

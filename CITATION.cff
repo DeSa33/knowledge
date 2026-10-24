@@ -4,14 +4,13 @@ title: "knowledge: A working archive of projects, papers, and ideas"
 type: software
 authors:
   - name: "DeSa33"
-    affiliation: "Repository maintainer"
 repository-code: "https://github.com/DeSa33/knowledge"
 url: "https://github.com/DeSa33/knowledge"
 date-released: 2026-10-24
 abstract: "A public archive of files from multiple projects and papers, with collection-specific documentation, provenance, and integrity records. BSG v4.0 is the initial collection. Repository metadata identifies maintenance, not authorship of every included artifact."
 keywords:
-  - representation learning
-  - transfer learning
-  - causal identification
-  - program induction
-  - state abstraction
+  - research archive
+  - project documentation
+  - research papers
+  - technical notes
+  - reproducibility

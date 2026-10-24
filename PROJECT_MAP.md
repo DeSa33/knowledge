@@ -20,6 +20,7 @@
 ## Boundaries and dependencies
 
 - `CATALOG.md` routes to real artifacts and collection guides.
+- `assets/` owns the vector README masthead; see [its map](assets/MAP.md).
 - `docs/` owns general conventions; `docs/bsg/` owns BSG context only.
 - New collections use real `projects/<slug>/` or `papers/<slug>/` files when appropriate. No empty collections are implied.
 - `SHA256SUMS` records exact registered artifact bytes; changes require intentional provenance updates.

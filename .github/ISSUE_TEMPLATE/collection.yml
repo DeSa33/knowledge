@@ -1,0 +1,37 @@
+name: New collection or file update
+description: Add material from any project or paper, or update an existing artifact.
+title: "[Collection] "
+body:
+  - type: input
+    id: collection
+    attributes:
+      label: Project or paper
+      description: Name the collection this material belongs to.
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Files and source
+      description: List exact filenames, formats, versions or dates, and the source of each artifact. Do not attach private material.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Description and status
+      description: Explain what readers should know, including whether the work is a draft, proposal, manuscript, or completed artifact.
+    validations:
+      required: true
+  - type: textarea
+    id: placement
+    attributes:
+      label: Placement and version history
+      description: Suggest a path, identify any superseded edition, and describe requested changes. Original files are preserved by default.
+  - type: checkboxes
+    id: permissions
+    attributes:
+      label: Public publication
+      options:
+        - label: I am authorized to publish the supplied material publicly and have removed private information and credentials.
+          required: true

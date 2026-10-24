@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="280" viewBox="0 0 1280 280" role="img" aria-labelledby="title desc">
+  <title id="title">Knowledge</title>
+  <desc id="desc">Projects, papers, and research. A versioned archive by DeSa33.</desc>
+  <rect width="1280" height="280" rx="16" fill="#101d2e"/>
+  <path d="M0 256H1280" stroke="#253b52"/>
+  <rect x="56" y="55" width="4" height="145" rx="2" fill="#48cbb6"/>
+  <text x="84" y="86" fill="#48cbb6" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="4">THE DESA33 ARCHIVE</text>
+  <text x="80" y="157" fill="#f3f7fb" font-family="Arial,Helvetica,sans-serif" font-size="64" font-weight="700" letter-spacing="-2">knowledge</text>
+  <text x="84" y="199" fill="#b8c9d9" font-family="Arial,Helvetica,sans-serif" font-size="22">Projects, papers, and research</text>
+  <g transform="translate(1025 67)" fill="none" stroke-width="2">
+    <rect x="32" y="0" width="105" height="138" rx="8" stroke="#314b65"/>
+    <rect x="16" y="16" width="105" height="138" rx="8" fill="#15273b" stroke="#45627e"/>
+    <rect x="0" y="32" width="105" height="138" rx="8" fill="#1a3047" stroke="#48cbb6"/>
+    <path d="M22 64H82 M22 82H70 M22 112H82 M22 130H65" stroke="#7695b0"/>
+    <path d="M22 150H48" stroke="#48cbb6"/>
+  </g>
+</svg>

@@ -1,63 +1,67 @@
-# knowledge
+<p align="center">
+  <img src="assets/banner.svg" alt="Knowledge — Projects, papers, and research" width="100%">
+</p>
 
-### A working archive of projects, papers, and ideas
+<p align="center">
+  <a href="https://github.com/DeSa33/knowledge/actions/workflows/repository-checks.yml"><img src="https://github.com/DeSa33/knowledge/actions/workflows/repository-checks.yml/badge.svg" alt="Repository checks"></a>
+</p>
 
-**knowledge** is DeSa33's central repository for files from different projects: research papers, technical notes, mathematical work, project documents, and supporting evidence. Each project keeps its own context, provenance, and status. The archive can grow across topics without treating every file as part of one research program.
+<p align="center">
+  <a href="CATALOG.md"><strong>Browse the catalog</strong></a> ·
+  <a href="docs/ADDING_FILES.md">Add a collection</a> ·
+  <a href="CONTRIBUTING.md">Contribute</a> ·
+  <a href="CHANGELOG.md">Changelog</a>
+</p>
 
-**Maintainer:** [DeSa33](https://github.com/DeSa33) · **Visibility:** public · **Current catalog:** [CATALOG.md](CATALOG.md)
+## About
 
-## Explore the archive
+**knowledge** is a public archive of DeSa33's projects, papers, and research. It brings manuscripts, technical documents, mathematical work, and supporting evidence into one organized, versioned collection.
 
-| Collection | What is available | Status | Start here |
-| --- | --- | --- | --- |
-| Broad Semantic Generalization (BSG) | Original 17-page v4 manuscript, reading guide, problem index, and evaluation notes | Independent working manuscript; research questions remain open | [PDF](BroadSematnicGenralzation%28BSG%29.pdf) · [Collection guide](docs/bsg/README.md) |
+Each project has its own context and status. The [catalog](CATALOG.md) connects readers to the original files and their supporting documentation.
 
-BSG is the first collection, not the scope of the entire repository. Future uploads may belong to unrelated projects or papers. The [catalog](CATALOG.md) is the entry point for all collections.
+## Collections
 
-## What belongs here
+### Broad Semantic Generalization · BSG
 
-- Papers, manuscripts, and mathematical problem statements.
-- Project plans, design documents, architecture notes, and technical explanations.
-- Research logs, review notes, derivations, and counterexamples with clear context.
-- Supporting datasets, code, or experiment records when their provenance and publication permissions are established.
-- Versioned artifacts that should remain findable and understandable after the original conversation or work session.
+**Problems in Representation and Transfer** explores when a mechanism learned in one environment can remain useful in another with a different representation. The manuscript defines eight mathematical problems and a joint research challenge.
 
-An uploaded paper does not need an accompanying software implementation. A project document does not need to be a research result. Organize each item according to what it actually contains.
+**v4.0 · 22 October 2026 · 17 pages · Working manuscript**
 
-## Start here
+[**Read the paper →**](BroadSematnicGenralzation%28BSG%29.pdf) · [Reading guide](docs/bsg/README.md) · [Problem index](docs/bsg/PROBLEM_INDEX.md) · [Provenance](docs/bsg/PROVENANCE.md)
 
-| Your goal | Where to go |
+BSG is the archive's first collection. Additional projects and papers are indexed independently as they are published.
+
+## Navigate
+
+| Resource | Purpose |
 | --- | --- |
-| Find a paper or project | [Archive catalog](CATALOG.md) |
-| Upload material from another project | [Adding files and collections](docs/ADDING_FILES.md) |
-| Understand the folder conventions | [Archive guide](docs/README.md) |
-| Navigate responsibilities and dependencies | [Project map](PROJECT_MAP.md) |
-| Propose a correction or contribution | [Contributing](CONTRIBUTING.md) |
-| Review the first research collection | [BSG guide](docs/bsg/README.md) |
-| Verify artifact integrity | [SHA-256 manifest](SHA256SUMS) and [verification guide](scripts/README.md) |
+| [Catalog](CATALOG.md) | Find projects, papers, versions, and primary files |
+| [Archive guide](docs/README.md) | Understand organization and document conventions |
+| [Adding files](docs/ADDING_FILES.md) | Prepare a new upload or collection |
+| [Contribution guide](CONTRIBUTING.md) | Submit corrections, reviews, and new material |
+| [Project map](PROJECT_MAP.md) | Locate files, responsibilities, and dependencies |
+| [Verification guide](scripts/README.md) | Check local links and artifact integrity |
 
 ## Organization
 
-| Location | Responsibility |
+| Path | Contents |
 | --- | --- |
-| `CATALOG.md` | Human-readable index of every project, paper, and collection |
-| `docs/` | Archive conventions and collection-specific guides |
-| `docs/bsg/` | Supporting documentation for BSG only |
-| `BroadSematnicGenralzation(BSG).pdf` | Original BSG v4 manuscript, kept at its requested path |
-| `scripts/` | Repository packaging and integrity checks |
-| `.github/` | Contribution forms, pull-request template, review routing, and CI |
-| `CITATION.cff` | Citation metadata for the archive, not a substitute for individual paper citations |
-| `SHA256SUMS` | Exact integrity records for cataloged artifacts |
+| `CATALOG.md` | Index of published collections |
+| `docs/` | Archive guidance and collection documentation |
+| `docs/bsg/` | BSG reading guide, evaluation notes, and provenance |
+| `assets/` | Repository presentation assets |
+| `scripts/` | Repository verification tools |
+| `.github/` | Issue forms, review templates, and automated checks |
 
-For new collections, use `projects/<project-slug>/` or `papers/<paper-slug>/` when a dedicated folder is useful. Create those folders when real material arrives; empty directories do not establish a project. Existing explicitly requested paths, including the BSG PDF, remain stable.
+New collections may use `projects/<slug>/` or `papers/<slug>/` as material is added. Existing artifact paths remain stable, including `BroadSematnicGenralzation(BSG).pdf` at the repository root.
 
-## Document identity and evidence
+## Quality and provenance
 
-Each catalog entry should state a title, project or collection, artifact type, version/date, path, and status. Keep an original file unchanged when importing it unless an edit is requested. Distinguish original artifacts from editorial summaries and derived results.
+Original imports retain their bytes unless a revision is explicitly requested. Catalog entries identify the artifact's version, date, and status; [SHA-256 records](SHA256SUMS) make registered file changes detectable.
 
-Claims belong to their source and scope. Mark work as a draft, working manuscript, proposal, executed experiment, reviewed result, or other accurate status. Public hosting and passing repository checks do not establish correctness, peer review, novelty, or a solved research problem.
+The current BSG edition is an independent working manuscript, has not undergone independent peer review, and discloses AI assistance in its preparation note. Collection-specific claims and limitations are documented alongside each work. Repository checks cover packaging and integrity, not mathematical or scientific validity.
 
-## Verify locally
+## Local verification
 
 ```bash
 git clone https://github.com/DeSa33/knowledge.git
@@ -65,22 +69,14 @@ cd knowledge
 python scripts/verify_repository.py
 ```
 
-Python 3.10 or later and its standard library are sufficient. On Windows, use `py -3 scripts/verify_repository.py` if appropriate. The script checks required archive files, local Markdown destinations, metadata essentials, and registered file hashes. The same command runs in GitHub Actions.
+Requires Python 3.10 or later; no third-party packages. On Windows, `py -3 scripts/verify_repository.py` is also supported. GitHub Actions runs the same checks on pushes and pull requests.
 
-The checks validate packaging, not mathematical proofs, scientific conclusions, external URLs, or every file format's internal structure. Project-specific validation belongs with the relevant collection.
+## Contributing
 
-## Featured first upload: BSG
+New project files, precise corrections, proof reviews, and reproducible experiments are welcome. Start with [the contribution guide](CONTRIBUTING.md) or choose an [issue template](https://github.com/DeSa33/knowledge/issues/new/choose).
 
-[**Broad Semantic Generalization: Problems in Representation and Transfer**](BroadSematnicGenralzation%28BSG%29.pdf) — v4.0, 22 October 2026, 17 pages.
+For citations, use the specific paper or artifact and its version. [CITATION.cff](CITATION.cff) identifies the archive. Rights and reuse permissions are described in [RIGHTS.md](RIGHTS.md); no repository-wide open license has been selected.
 
-The original PDF is published as `BroadSematnicGenralzation(BSG).pdf` without changing its bytes. It defines eight mathematical problems and an integrated challenge involving representation and transfer. It describes itself as an independent working manuscript, discloses generative-AI assistance, and has not undergone independent peer review. Read [its provenance](docs/bsg/PROVENANCE.md) and [problem index](docs/bsg/PROBLEM_INDEX.md) for scope.
+---
 
-## Contribute and cite
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for submissions and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for participation expectations. Research forms can be used for any collection; name the project or paper rather than assuming BSG.
-
-Cite the specific artifact and version when discussing its contents. [CITATION.cff](CITATION.cff) describes this repository as an archive; individual papers may have different authorship and citation metadata.
-
-No repository-wide open license has been selected. Public visibility does not create an additional general reuse license. See [RIGHTS.md](RIGHTS.md). Report sensitive issues according to [SECURITY.md](SECURITY.md).
-
-[Changelog](CHANGELOG.md) · [Agent instructions](AGENTS.md) · [Archive map](PROJECT_MAP.md)
+Maintained by [**DeSa33**](https://github.com/DeSa33) · [Code of conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md)

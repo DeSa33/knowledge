@@ -56,6 +56,17 @@ class LinkTests(unittest.TestCase):
         self.assertEqual(self.errors('# _Hello_\n[Here](#hello)\n'), [])
         self.assertEqual(self.errors('# Café\n[Here](#caf%C3%A9)\n'), [])
 
+    def test_directory_case_and_directory_section_links(self):
+        guide = self.root / 'notes'
+        guide.mkdir()
+        (guide / 'README.md').write_text('# Notes\n## Details\n')
+        self.assertEqual(self.errors('[Notes](notes/) [Details](notes/#details)'), [])
+        self.assertTrue(self.errors('[Wrong case](Notes/)'))
+
+    def test_encoded_absolute_and_backslash_paths_fail(self):
+        self.assertTrue(self.errors('[Outside](%2Fetc/passwd)'))
+        self.assertTrue(self.errors('[Wrong separator](notes%5Cguide.md)'))
+
     def test_external_links_are_outside_network_check_scope(self):
         self.assertEqual(self.errors('[External](https://example.com/unknown) [Mail](mailto:example@example.com)'), [])
 

@@ -9,5 +9,6 @@
 - Kept the README personal and shortened repeated setup language.
 - Made collection checks independent of BSG; added section-link validation, stricter metadata checks, and reproducible catalog/checksum generation.
 - Added regression coverage and Linux/Windows CI with pinned action revisions.
+- Corrected Windows path-alias handling while retaining exact filename-case validation.
 
 This records repository changes. Research results and their scope belong to the relevant paper or project.

@@ -3,6 +3,7 @@
 from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
+import posixpath
 import re
 import sys
 import unicodedata
@@ -132,6 +133,9 @@ def section_anchors(text):
 
 def check_links(root, path, text):
     root = Path(root).resolve()
+    # Resolve the document's parent alias, but preserve URL filename case until validation.
+    path = Path(path).parent.resolve() / Path(path).name
+    document = path.relative_to(root).as_posix()
     clean = without_code(text)
     parser = HTMLLinks()
     parser.feed(clean)
@@ -144,25 +148,26 @@ def check_links(root, path, text):
             if url.scheme or url.netloc:
                 continue
             count += 1
-            if url.path.startswith('/') or '\\' in url.path:
+            decoded = unquote(url.path)
+            if decoded.startswith('/') or '\\' in decoded:
                 raise ValueError('use a repository-relative URL with forward slashes')
-            dest = (path.parent / unquote(url.path)).resolve() if url.path else path.resolve()
-            if not dest.is_relative_to(root):
-                raise ValueError('destination escapes the repository')
+            relative = posixpath.normpath(posixpath.join(posixpath.dirname(document), decoded)) if decoded else document
+            if relative == '.':
+                dest = root
+            else:
+                dest = catalog.local_file(root, relative, allow_directory=True)
             if dest.is_dir():
-                # GitHub opens directory links; validate a fragment against its README.
                 if not url.fragment:
                     continue
-                dest = dest / 'README.md'
-            relative = dest.relative_to(root).as_posix()
-            catalog.local_file(root, relative)
+                relative = (Path(relative) / 'README.md').as_posix()
+                dest = catalog.local_file(root, relative)
             fragment = unquote(url.fragment)
             if fragment and dest.suffix.lower() in {'.md', '.html', '.htm', '.svg'}:
                 source = dest.read_text(encoding='utf-8')
                 if fragment not in section_anchors(source):
                     raise ValueError(f'no section or ID #{fragment}')
         except (ValueError, OSError) as exc:
-            errors.append(f'{path.relative_to(root)}: {raw}: {exc}')
+            errors.append(f'{document}: {raw}: {exc}')
     return errors, count
 
 

@@ -28,7 +28,7 @@ def digest_file(path):
     return digest.hexdigest()
 
 
-def local_file(root, value):
+def local_file(root, value, allow_directory=False):
     """Resolve exact-case POSIX paths consistently on Linux and Windows."""
     if not isinstance(value, str) or not value or any(c in value for c in '\\:#?\r\n\x00'):
         raise ValueError(f'Invalid repository-relative path: {value!r}')
@@ -40,7 +40,8 @@ def local_file(root, value):
         if not target.is_dir() or part not in {p.name for p in target.iterdir()}:
             raise ValueError(f'Missing file or wrong filename case: {value}')
         target = target / part
-    if not target.resolve().is_relative_to(Path(root).resolve()) or not target.is_file():
+    allowed_type = target.is_file() or (allow_directory and target.is_dir())
+    if not target.resolve().is_relative_to(Path(root).resolve()) or not allowed_type:
         raise ValueError(f'Missing or escaping file: {value}')
     return target
 

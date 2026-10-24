@@ -1,6 +1,6 @@
 # Contributing
 
-This archive accepts material from different projects and papers. For a new collection, follow [Adding files](docs/ADDING_FILES.md) and update [the catalog](CATALOG.md). Name the relevant project; BSG is not the default scope of every submission.
+This archive accepts material from different projects and papers. For a new collection, follow [Adding files](docs/ADDING_FILES.md) and update `catalog.json` and regenerate [the catalog](CATALOG.md) with `python scripts/catalog.py --write`. Name the relevant project; BSG is not the default scope of every submission.
 
 Contributions should make a claim easier to understand, test, or falsify. Corrections and counterexamples are as useful as positive constructions.
 

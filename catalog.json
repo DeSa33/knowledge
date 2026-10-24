@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "collections": [
+    {
+      "id": "bsg",
+      "title": "Broad Semantic Generalization",
+      "subtitle": "Problems in Representation and Transfer",
+      "summary": "Eight mathematical problems and a joint challenge for discovering, validating, and reusing mechanisms across environments with different representations.",
+      "kind": "Research paper",
+      "version": "4.0",
+      "date": "2026-10-22",
+      "status": "Working manuscript",
+      "topics": ["Causal identification", "Representation learning", "Transfer learning"],
+      "landing": "papers/bsg/README.md",
+      "provenance": "docs/bsg/PROVENANCE.md",
+      "artifacts": [
+        {
+          "label": "Manuscript PDF",
+          "path": "BroadSematnicGenralzation(BSG).pdf",
+          "format": "PDF",
+          "pages": 17,
+          "sha256": "6ec87261718389bed5450de7e304f246d1d3df072d738deaa07709a510cca119"
+        }
+      ]
+    }
+  ]
+}

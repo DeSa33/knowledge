@@ -10,6 +10,7 @@ Start with `README.md`, `PROJECT_MAP.md`, then the relevant local map and exact 
 - Record scope: problem ID, version, environment family, information access, resource budget, and validation method.
 - Do not add an open license, claim manuscript authorship, or replace citation identity without maintainer instruction.
 - Keep secrets, private conversations, user profiles, and unrelated research out of the repository.
+- Edit `catalog.json` for catalog changes; run `python scripts/catalog.py --write` and `--check`. Run catalog contract tests with `python -m unittest discover -s scripts -p "test_*.py"`.
 - Run `python scripts/verify_repository.py` after relevant edits. This checks packaging, not mathematics.
 - A changed registered artifact requires a new SHA-256 digest and a provenance/changelog entry. Never update the checksum to conceal an accidental mismatch.
 - Use relative local links and update maps when adding or moving files.

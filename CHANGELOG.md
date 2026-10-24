@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-24 — Reader navigation and catalog automation
+
+- Applied topic-first and collection-first navigation after reviewing Papers We Love, Awesome, and The Blue Book.
+- Added a BSG landing page with direct file access, metadata, citation guidance, and version history.
+- Introduced structured catalog metadata, deterministic index generation, and local metadata search.
+- Added CI coverage for catalog freshness and multi-project metadata contract tests.
+- Extended local-link verification to HTML links and image sources in the README.
+
 ## 2026-10-24 — Presentation refinement
 
 - Added a local vector masthead, live CI status badge, and concise landing-page navigation.

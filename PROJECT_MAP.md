@@ -10,7 +10,7 @@
 | --- | --- | --- |
 | Find any project or paper | [README](README.md) | [Catalog](CATALOG.md) |
 | Add an unrelated project | [Adding files](docs/ADDING_FILES.md) | New collection and catalog entry |
-| Read BSG | [Collection guide](docs/bsg/README.md) | [Original PDF](BroadSematnicGenralzation%28BSG%29.pdf) |
+| Read BSG | [Collection page](papers/bsg/README.md) | [Original PDF](BroadSematnicGenralzation%28BSG%29.pdf) |
 | Review a BSG statement | [BSG problem index](docs/bsg/PROBLEM_INDEX.md) | Exact PDF section/equation |
 | Update an imported edition | Its collection provenance | Artifact, checksum, catalog, changelog |
 | Change archive documentation | [Documentation map](docs/MAP.md) | Relevant Markdown file |
@@ -19,6 +19,8 @@
 
 ## Boundaries and dependencies
 
+- `catalog.json` owns collection metadata; `scripts/catalog.py` validates it and generates `CATALOG.md`. CI detects stale generated output.
+- `papers/` owns paper landing pages; `docs/bsg/` retains the detailed BSG guides.
 - `CATALOG.md` routes to real artifacts and collection guides.
 - `assets/` owns the vector README masthead; see [its map](assets/MAP.md).
 - `docs/` owns general conventions; `docs/bsg/` owns BSG context only.

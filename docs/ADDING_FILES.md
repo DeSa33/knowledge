@@ -7,9 +7,9 @@
 3. Preserve the original bytes when importing an existing artifact. Use the requested name when supplied; otherwise choose a clear, stable name.
 4. Place related files together when that helps readers. Use `projects/<slug>/` or `papers/<slug>/` for new collections, or retain an explicitly requested path.
 5. Create a short collection README for multi-file material. Describe real contents, scope, status, version/date, and how to use the files.
-6. Add a [catalog](../CATALOG.md) entry and provenance information. Record original filename, import date, edits, and attribution when known.
+6. Add a `catalog.json` entry and provenance information, then run `python scripts/catalog.py --write` to update the [catalog](../CATALOG.md). Record original filename, import date, edits, and attribution when known.
 7. Add an exact SHA-256 entry to `SHA256SUMS` for a primary imported artifact. Do not update an existing digest merely to silence an unexplained mismatch.
-8. Update relevant maps and run `python scripts/verify_repository.py`.
+8. Update relevant maps and run `python scripts/verify_repository.py`, `python scripts/catalog.py --check`, and `python -m unittest discover -s scripts -p "test_*.py"`.
 9. Publish with a commit message naming the collection and purpose.
 
 ## Naming and versioning
@@ -35,3 +35,5 @@ Keep names descriptive and use extensions matching the actual file format. Prese
 For code or experiments, include the actual runnable sources, environment, commands, seeds, budgets, inputs, and outputs needed to reproduce the claim. If these are absent, say so. A document-only upload is valid; it need not pretend to include an implementation.
 
 BSG-specific gates are documented in [its evaluation guide](bsg/EVALUATION.md). They are not requirements automatically imposed on every other project.
+
+See the [metadata reference](CATALOG_FORMAT.md) for required fields, search commands, and generation rules.

@@ -7,76 +7,62 @@
 </p>
 
 <p align="center">
-  <a href="CATALOG.md"><strong>Browse the catalog</strong></a> ·
-  <a href="docs/ADDING_FILES.md">Add a collection</a> ·
-  <a href="CONTRIBUTING.md">Contribute</a> ·
-  <a href="CHANGELOG.md">Changelog</a>
+  <a href="CATALOG.md"><strong>Browse all work</strong></a> ·
+  <a href="#papers--research">Papers &amp; research</a> ·
+  <a href="#browse-by-topic">Topics</a> ·
+  <a href="docs/ADDING_FILES.md">Add files</a>
 </p>
 
-## About
+**knowledge** collects DeSa33's original papers, project documents, and research in one versioned archive. Start with a collection below or use the [full catalog](CATALOG.md) to find files, editions, and supporting material.
 
-**knowledge** is a public archive of DeSa33's projects, papers, and research. It brings manuscripts, technical documents, mathematical work, and supporting evidence into one organized, versioned collection.
+## Papers & research
 
-Each project has its own context and status. The [catalog](CATALOG.md) connects readers to the original files and their supporting documentation.
+| Collection | About | Edition | Open |
+| --- | --- | --- | --- |
+| **[Broad Semantic Generalization](papers/bsg/README.md)** | Eight mathematical problems in representation and transfer | v4.0 · Working manuscript | [Read PDF](BroadSematnicGenralzation%28BSG%29.pdf) · [Download](BroadSematnicGenralzation%28BSG%29.pdf?raw=true) |
 
-## Collections
+Each collection has an entry page with its overview, artifacts, provenance, review status, and citation details. The archive also accepts technical designs, project notes, and supporting evidence from other work as they are published.
 
-### Broad Semantic Generalization · BSG
+## Browse by topic
 
-**Problems in Representation and Transfer** explores when a mechanism learned in one environment can remain useful in another with a different representation. The manuscript defines eight mathematical problems and a joint research challenge.
+[**Representation learning**](CATALOG.md#representation-learning) · [**Transfer learning**](CATALOG.md#transfer-learning) · [**Causal identification**](CATALOG.md#causal-identification)
 
-**v4.0 · 22 October 2026 · 17 pages · Working manuscript**
+Only topics with published material are listed. [Browse all collections →](CATALOG.md)
 
-[**Read the paper →**](BroadSematnicGenralzation%28BSG%29.pdf) · [Reading guide](docs/bsg/README.md) · [Problem index](docs/bsg/PROBLEM_INDEX.md) · [Provenance](docs/bsg/PROVENANCE.md)
+## Find your way
 
-BSG is the archive's first collection. Additional projects and papers are indexed independently as they are published.
-
-## Navigate
-
-| Resource | Purpose |
+| I want to… | Start here |
 | --- | --- |
-| [Catalog](CATALOG.md) | Find projects, papers, versions, and primary files |
-| [Archive guide](docs/README.md) | Understand organization and document conventions |
-| [Adding files](docs/ADDING_FILES.md) | Prepare a new upload or collection |
-| [Contribution guide](CONTRIBUTING.md) | Submit corrections, reviews, and new material |
-| [Project map](PROJECT_MAP.md) | Locate files, responsibilities, and dependencies |
-| [Verification guide](scripts/README.md) | Check local links and artifact integrity |
+| Read a paper or explore a project | [Catalog](CATALOG.md) |
+| Understand BSG before reading the manuscript | [BSG collection](papers/bsg/README.md) |
+| Add files from another project | [Upload and collection guide](docs/ADDING_FILES.md) |
+| Report an issue or suggest a correction | [Issue forms](https://github.com/DeSa33/knowledge/issues/new/choose) |
+| Review or contribute research | [Contributing](CONTRIBUTING.md) |
+| Navigate the repository's internals | [Project map](PROJECT_MAP.md) |
 
-## Organization
+## About this archive
 
-| Path | Contents |
-| --- | --- |
-| `CATALOG.md` | Index of published collections |
-| `docs/` | Archive guidance and collection documentation |
-| `docs/bsg/` | BSG reading guide, evaluation notes, and provenance |
-| `assets/` | Repository presentation assets |
-| `scripts/` | Repository verification tools |
-| `.github/` | Issue forms, review templates, and automated checks |
+Original artifacts retain their own scope, version history, and rights status. The current BSG edition is an independent working manuscript; its [collection page](papers/bsg/README.md) documents review status and limitations. Metadata and [integrity records](SHA256SUMS) help readers identify the exact files they are using.
 
-New collections may use `projects/<slug>/` or `papers/<slug>/` as material is added. Existing artifact paths remain stable, including `BroadSematnicGenralzation(BSG).pdf` at the repository root.
+The catalog is generated from [structured metadata](catalog.json), with checks for missing files, duplicate identifiers, and artifact digests. See the [verification guide](scripts/README.md) for local commands and the limits of these checks.
 
-## Quality and provenance
-
-Original imports retain their bytes unless a revision is explicitly requested. Catalog entries identify the artifact's version, date, and status; [SHA-256 records](SHA256SUMS) make registered file changes detectable.
-
-The current BSG edition is an independent working manuscript, has not undergone independent peer review, and discloses AI assistance in its preparation note. Collection-specific claims and limitations are documented alongside each work. Repository checks cover packaging and integrity, not mathematical or scientific validity.
-
-## Local verification
+<details>
+<summary><strong>Local tools and repository conventions</strong></summary>
 
 ```bash
 git clone https://github.com/DeSa33/knowledge.git
 cd knowledge
 python scripts/verify_repository.py
+python scripts/catalog.py --check
+python scripts/catalog.py --query transfer
 ```
 
-Requires Python 3.10 or later; no third-party packages. On Windows, `py -3 scripts/verify_repository.py` is also supported. GitHub Actions runs the same checks on pushes and pull requests.
+Python 3.10 or later; no third-party packages. On Windows, `py -3` can replace `python`.
 
-## Contributing
+New multi-file collections use `papers/<slug>/` or `projects/<slug>/` when appropriate. Existing artifact paths remain stable. See the [archive guide](docs/README.md), [metadata reference](docs/CATALOG_FORMAT.md), and [project map](PROJECT_MAP.md).
 
-New project files, precise corrections, proof reviews, and reproducible experiments are welcome. Start with [the contribution guide](CONTRIBUTING.md) or choose an [issue template](https://github.com/DeSa33/knowledge/issues/new/choose).
-
-For citations, use the specific paper or artifact and its version. [CITATION.cff](CITATION.cff) identifies the archive. Rights and reuse permissions are described in [RIGHTS.md](RIGHTS.md); no repository-wide open license has been selected.
+</details>
 
 ---
 
-Maintained by [**DeSa33**](https://github.com/DeSa33) · [Code of conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md)
+Maintained by [**DeSa33**](https://github.com/DeSa33) · [Changelog](CHANGELOG.md) · [Citation metadata](CITATION.cff) · [Rights](RIGHTS.md) · [Conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md)

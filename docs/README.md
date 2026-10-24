@@ -4,9 +4,11 @@ This repository hosts files from multiple projects and papers. BSG is one collec
 
 ## Navigation
 
+- [Metadata reference](CATALOG_FORMAT.md): catalog format, generation, and local search.
 - [Catalog](../CATALOG.md): every collection and its primary artifacts.
 - [Adding files](ADDING_FILES.md): intake, naming, metadata, versioning, and checks.
-- [BSG collection](bsg/README.md): reading guide for the first manuscript.
+- [BSG collection](../papers/bsg/README.md): paper overview, files, citation, and version history.
+- [BSG reading guide](bsg/README.md): a route through the manuscript.
 - [Documentation map](MAP.md): ownership of archive and collection documentation.
 
 ## Folder conventions

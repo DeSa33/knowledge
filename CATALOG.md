@@ -1,13 +1,43 @@
-# Archive catalog
+# Catalog
 
-The catalog indexes material from different projects. Inclusion here does not imply that collections share methods, conclusions, or maturity.
+Browse original papers, project files, and supporting material published in **knowledge**.
 
-| ID | Title / collection | Type | Version and date | Status | Artifact | Context |
-| --- | --- | --- | --- | --- | --- | --- |
-| BSG | Broad Semantic Generalization: Problems in Representation and Transfer | Research manuscript (PDF) | v4.0 · 22 October 2026 | Independent working manuscript; not independently peer reviewed | [BroadSematnicGenralzation(BSG).pdf](BroadSematnicGenralzation%28BSG%29.pdf) | [Guide](docs/bsg/README.md) · [Provenance](docs/bsg/PROVENANCE.md) |
+> Generated from `catalog.json`. Edit the metadata, then run `python scripts/catalog.py --write`.
 
-## Add an entry
+## Browse by topic
 
-Follow [Adding files and collections](docs/ADDING_FILES.md). Add real uploaded artifacts only. Record title, project, artifact type, version/date, current status, exact relative path, and relevant context. Do not invent authorship, publication identifiers, or validation evidence.
+[Causal identification](#causal-identification) · [Representation learning](#representation-learning) · [Transfer learning](#transfer-learning)
 
-Keep obsolete editions identifiable and connect superseding versions explicitly. A filename change should preserve links and provenance. The [checksum manifest](SHA256SUMS) records the bytes of registered artifacts.
+## All collections
+
+| Collection | Type | Edition | Status | Files |
+| --- | --- | --- | --- | --- |
+| [Broad Semantic Generalization](papers/bsg/README.md) | Research paper | v4.0 · 2026-10-22 | Working manuscript | [PDF](BroadSematnicGenralzation%28BSG%29.pdf) |
+
+## Collection summaries
+
+### Broad Semantic Generalization
+
+Eight mathematical problems and a joint challenge for discovering, validating, and reusing mechanisms across environments with different representations.
+
+[Open collection](papers/bsg/README.md) · [Provenance](docs/bsg/PROVENANCE.md)
+
+## Topic index
+
+### Causal identification
+
+- [Broad Semantic Generalization](papers/bsg/README.md) — Research paper; working manuscript.
+
+### Representation learning
+
+- [Broad Semantic Generalization](papers/bsg/README.md) — Research paper; working manuscript.
+
+### Transfer learning
+
+- [Broad Semantic Generalization](papers/bsg/README.md) — Research paper; working manuscript.
+
+## Status and reuse
+
+Status describes the artifact, not an endorsement of its claims. See each collection for authorship, review status, limitations, and citation details.
+
+[Add a collection](docs/ADDING_FILES.md) · [Verify files](scripts/README.md) · [Rights and permissions](RIGHTS.md)

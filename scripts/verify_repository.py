@@ -1,6 +1,7 @@
 """Verify research-repository packaging; no mathematical claims are tested."""
 
 from pathlib import Path
+from html.parser import HTMLParser
 import hashlib
 import re
 import sys
@@ -10,7 +11,7 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 PDF = "BroadSematnicGenralzation(BSG).pdf"
 REQUIRED = (
-    PDF, "README.md", "CATALOG.md", "docs/ADDING_FILES.md", "docs/bsg/README.md", "docs/bsg/MAP.md", "PROJECT_MAP.md", "AGENTS.md", "CONTRIBUTING.md",
+    PDF, "README.md", "catalog.json", "docs/CATALOG_FORMAT.md", "papers/bsg/README.md", "CATALOG.md", "docs/ADDING_FILES.md", "docs/bsg/README.md", "docs/bsg/MAP.md", "PROJECT_MAP.md", "AGENTS.md", "CONTRIBUTING.md",
     "CITATION.cff", "CHANGELOG.md", "RIGHTS.md", "SECURITY.md",
     "CODE_OF_CONDUCT.md", "SHA256SUMS", "docs/README.md", "docs/MAP.md",
     "docs/bsg/PROBLEM_INDEX.md", "docs/bsg/EVALUATION.md", "docs/bsg/PROVENANCE.md",
@@ -58,6 +59,13 @@ def verify(root=ROOT):
     if pdf.is_file() and not pdf.read_bytes().startswith(b"%PDF-"):
         errors.append("Canonical manuscript has no PDF header")
 
+    class LocalLinks(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.targets = []
+        def handle_starttag(self, tag, attrs):
+            self.targets.extend(v for k, v in attrs if k in {"href", "src"} and v)
+
     checked_links = 0
     for path in sorted(root.rglob("*")):
         if not path.is_file() or ".git" in path.relative_to(root).parts:
@@ -73,7 +81,10 @@ def verify(root=ROOT):
             continue
         # Repository Markdown uses inline links with URL-encoded parentheses.
         text = re.sub(r"```.*?```", "", text, flags=re.S)
-        for target in re.findall(r"!?\[[^\]]*\]\(([^\s)]+)\)", text):
+        html_links = LocalLinks()
+        html_links.feed(text)
+        targets = re.findall(r"!?\[[^\]]*\]\(([^\s)]+)\)", text) + html_links.targets
+        for target in targets:
             parsed = urlsplit(target)
             if parsed.scheme or parsed.netloc or not parsed.path:
                 continue

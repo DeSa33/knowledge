@@ -39,4 +39,4 @@ Evidence and reproduction method:
 Known limitations:
 ```
 
-Use the [evaluation guide](EVALUATION.md) for integrated claims and [contribution guide](../CONTRIBUTING.md) for submission details.
+Use the [evaluation guide](EVALUATION.md) for integrated claims and [contribution guide](../../CONTRIBUTING.md) for submission details.

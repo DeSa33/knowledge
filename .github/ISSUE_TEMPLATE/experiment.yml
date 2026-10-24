@@ -16,7 +16,7 @@ body:
     id: contract
     attributes:
       label: Research question and contract
-      description: Manuscript version, problem, environment family, assumptions, access, budgets, and thresholds.
+      description: Project/paper, version, question, assumptions, access, budgets, and thresholds as relevant.
     validations:
       required: true
   - type: textarea

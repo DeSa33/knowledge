@@ -1,6 +1,6 @@
 # Evaluation and evidence guide
 
-This guide summarizes reporting expectations from BSG v4. The [manuscript](../BroadSematnicGenralzation%28BSG%29.pdf) supplies the actual contract; this document adds no new theorem or benchmark result.
+This guide summarizes reporting expectations from BSG v4. The [manuscript](../../BroadSematnicGenralzation%28BSG%29.pdf) supplies the actual contract; this document adds no new theorem or benchmark result.
 
 ## Freeze the contract first
 

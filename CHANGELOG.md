@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-24 — Multi-project archive organization
+
+- Clarified that knowledge hosts files from different projects and papers.
+- Added a central catalog and intake/naming/versioning guide.
+- Moved BSG-specific supporting guides into docs/bsg/ and updated links.
+- Preserved the original PDF at its requested root path.
+
 ## 2026-10-24 — Initial repository setup
 
 - Established the public `knowledge` research repository.

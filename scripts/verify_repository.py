@@ -10,11 +10,11 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 PDF = "BroadSematnicGenralzation(BSG).pdf"
 REQUIRED = (
-    PDF, "README.md", "PROJECT_MAP.md", "AGENTS.md", "CONTRIBUTING.md",
+    PDF, "README.md", "CATALOG.md", "docs/ADDING_FILES.md", "docs/bsg/README.md", "docs/bsg/MAP.md", "PROJECT_MAP.md", "AGENTS.md", "CONTRIBUTING.md",
     "CITATION.cff", "CHANGELOG.md", "RIGHTS.md", "SECURITY.md",
     "CODE_OF_CONDUCT.md", "SHA256SUMS", "docs/README.md", "docs/MAP.md",
-    "docs/PROBLEM_INDEX.md", "docs/EVALUATION.md", "docs/PROVENANCE.md",
-    "docs/ROADMAP.md", "scripts/README.md", "scripts/MAP.md",
+    "docs/bsg/PROBLEM_INDEX.md", "docs/bsg/EVALUATION.md", "docs/bsg/PROVENANCE.md",
+    "docs/bsg/ROADMAP.md", "scripts/README.md", "scripts/MAP.md",
     ".github/ISSUE_TEMPLATE/research_review.yml",
     ".github/ISSUE_TEMPLATE/experiment.yml",
     ".github/pull_request_template.md", ".github/CODEOWNERS",

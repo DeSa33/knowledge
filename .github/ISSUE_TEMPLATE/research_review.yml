@@ -5,8 +5,8 @@ body:
   - type: input
     id: reference
     attributes:
-      label: Manuscript and exact reference
-      description: Version, problem ID, section, equation, and page.
+      label: Project or paper and exact reference
+      description: Project/paper, version, section, equation, page, or other exact location.
     validations:
       required: true
   - type: textarea

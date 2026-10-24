@@ -1,5 +1,7 @@
 # Contributing
 
+This archive accepts material from different projects and papers. For a new collection, follow [Adding files](docs/ADDING_FILES.md) and update [the catalog](CATALOG.md). Name the relevant project; BSG is not the default scope of every submission.
+
 Contributions should make a claim easier to understand, test, or falsify. Corrections and counterexamples are as useful as positive constructions.
 
 ## Choose a contribution
@@ -8,9 +10,9 @@ Use a **research review** issue for a theorem, definition, proof gap, counterexa
 
 ## Required context
 
-State the manuscript version, problem ID, section/equation/page, exact assumptions, and the smallest reproducible example or derivation. Distinguish a proposed change from an established result. If an argument depends on an oracle, resets, intervention access, independence, a finite state bound, or numeric precision, say so explicitly.
+State the project or paper, version, and section/equation/page or other precise location, exact assumptions, and the smallest reproducible example or derivation. Distinguish a proposed change from an established result. If an argument depends on an oracle, resets, intervention access, independence, a finite state bound, or numeric precision, say so explicitly.
 
-For experiments, include code revision, environment, commands, seeds, budgets, baselines, source-null/expanded controls where relevant, raw outputs, uncertainty, and all failure cases. Follow [the evaluation guide](docs/EVALUATION.md).
+For experiments, include code revision, environment, commands, seeds, budgets, baselines, source-null/expanded controls where relevant, raw outputs, uncertainty, and all failure cases. Follow [the evaluation guide](docs/bsg/EVALUATION.md).
 
 ## Pull-request workflow
 
@@ -20,7 +22,7 @@ For experiments, include code revision, environment, commands, seeds, budgets, b
 4. Run `python scripts/verify_repository.py`.
 5. Explain what changed, why, how it was checked, and what remains uncertain.
 
-Do not silently replace the original PDF. Proposed manuscript corrections should first identify the exact current text and the proposed replacement. Accepted new editions must update [provenance](docs/PROVENANCE.md), `SHA256SUMS`, citation information, and the changelog together.
+Do not silently replace the original PDF. Proposed paper corrections should first identify the exact current text and the proposed replacement. Accepted new editions must update [provenance](docs/bsg/PROVENANCE.md), `SHA256SUMS`, citation information, and the changelog together.
 
 ## Attribution and permissions
 

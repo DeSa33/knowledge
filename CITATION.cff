@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Cite this repository snapshot for the collection; identify BSG v4.0 (22 October 2026) separately when discussing the manuscript."
+title: "knowledge: Broad Semantic Generalization research collection"
+type: software
+authors:
+  - name: "DeSa33"
+    affiliation: "Repository maintainer"
+repository-code: "https://github.com/DeSa33/knowledge"
+url: "https://github.com/DeSa33/knowledge"
+date-released: 2026-10-24
+abstract: "Research-document collection containing the independent working manuscript Broad Semantic Generalization: Problems in Representation and Transfer, version 4.0, dated 22 October 2026. Repository metadata identifies maintenance, not independently verified manuscript authorship."
+keywords:
+  - representation learning
+  - transfer learning
+  - causal identification
+  - program induction
+  - state abstraction

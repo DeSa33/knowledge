@@ -1,0 +1,30 @@
+name: Research review or correction
+description: Report a proof gap, counterexample, definition issue, or clarification.
+title: "[Research] "
+body:
+  - type: input
+    id: reference
+    attributes:
+      label: Manuscript and exact reference
+      description: Version, problem ID, section, equation, and page.
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim or concern
+      description: Quote only the necessary text and state the precise issue.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Derivation or counterexample
+      description: State assumptions, permitted access, and reproducible reasoning.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed correction and limits
+      description: Explain what the evidence supports and what remains uncertain.

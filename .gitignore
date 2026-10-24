@@ -1,0 +1,27 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Temporary research/build artifacts; committed PDFs remain visible
+tmp/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Local credentials
+.env
+.env.*
+!.env.example

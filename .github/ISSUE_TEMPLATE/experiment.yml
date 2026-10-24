@@ -1,0 +1,42 @@
+name: Experiment proposal or result
+description: Specify a reproducible evaluation and its evidence boundary.
+title: "[Experiment] "
+body:
+  - type: dropdown
+    id: status
+    attributes:
+      label: Evidence status
+      options:
+        - Proposed experiment
+        - Executed result
+        - Replication
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Research question and contract
+      description: Manuscript version, problem, environment family, assumptions, access, budgets, and thresholds.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction plan or commands
+      description: Code revision, environment, seeds, split policy, sample size, and stopping rule.
+    validations:
+      required: true
+  - type: textarea
+    id: controls
+    attributes:
+      label: Baselines, controls, and resource accounting
+      description: Include target-only, source-null, and expanded-library controls where required.
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Results, failures, uncertainty, and limits
+      description: Link raw records for executed work; identify untested gates for proposals.
+    validations:
+      required: true
